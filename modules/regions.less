@@ -1,0 +1,127 @@
+/**
+ * Regions, basics to show off the regions.
+ */
+
+img {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    .site-logo-text {
+        width: 40%;
+    }
+
+    .navbar2 {
+        width: 50%;
+    }
+
+    .profile {
+        width: 10%;
+    }
+}
+
+.wrap-all {
+    margin: 0 auto;
+    max-width: 950px;
+}
+
+.footer-column {
+    float: left;
+    width: 33%;
+}
+
+.footer-column-wrapper {
+    overflow: auto;
+}
+
+.sidebar {
+    width: 33%;
+    float: left;
+}
+
+.main .has-sidebar {
+    width: 67%;
+    float: left;
+}
+
+.author-byline em{
+    max-width: 600px;
+}
+
+.outer-wrap-footer {
+    clear: both;
+    margin-bottom: 22px;
+}
+
+.site-footer {
+    text-align: center;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-type: none;
+    }
+
+    li {
+        display: inline;
+    }
+}
+
+.footer-column {
+    ul {
+        margin: 0;
+        padding: 1em;
+        list-style-type: circle;
+    }
+}
+
+.next-previous {
+    .next,
+    .previous {
+        width: 50%;
+    }
+
+    .next {
+        float: right;
+        text-align: right;
+    }
+}
+
+.breadcrumb-wrap {
+    background-color: #e8f2f0;
+    padding: 0.5px;
+    border-radius: 15px;
+}
+
+.breadcrumb {
+    margin-bottom: 22px;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    li {
+        display: inline;
+
+        &::after {
+            content: " » ";
+        }
+    }
+}
+
+// .flash-wrap {
+//     background-size: 100%;
+//     background-repeat: no-repeat;
+//     overflow: auto; /* clear fix to make div span all elements */
+//     width: 100%;
+// }
+
+.site-header {
+    position: relative;
+}

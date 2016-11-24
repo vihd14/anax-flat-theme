@@ -1,4 +1,4 @@
-@import "grid-float.less";
+@import "grid-flex.less";
 
 .wrap {
     .container();
@@ -55,15 +55,15 @@
 // Swap places using pull and push
 .column-a {
     .column(6);
-    .push(3)
+    order: 2;
 }
 .column-b {
     .column(3);
-    .pull-right(9);
+    order: 3;
 }
 .column-c {
     .column(3);
-    .pull(9);
+    order: 1;
 }
 
 // Nested columns

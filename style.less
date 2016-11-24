@@ -5,6 +5,15 @@
 
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab:100');
 
+html {
+    overflow-y: scroll;
+}
+
+body {
+    background-color: #f1f1f1;
+    margin: 10px;
+}
+
 img {
     max-width: 100%;
 }
@@ -16,24 +25,26 @@ p {
 .navbar2 {
     font-family: "Arial";
     text-align: center;
-    a {
-        display: inline-block;
-        border: 1px solid #C7D5DE;
-        margin: 10px;
-        margin-bottom: 20px;
-        text-decoration: none;
-        box-shadow: 0 0 1em grey;
-        opacity: 0.8;
-    }
-    a:visited {
-        color: black;
-        text-decoration: none;
-    }
-    a:hover {
-        background-color: #dbdbdb;
-        text-decoration: none;
-        opacity: 1;
-        color: black;
+    li {
+        a {
+            display: inline-block;
+            border: 1px solid #C7D5DE;
+            margin: 10px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            box-shadow: 0 0 1em grey;
+            opacity: 0.8;
+        }
+        a:visited {
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            background-color: #dbdbdb;
+            text-decoration: none;
+            opacity: 1;
+            color: black;
+        }
     }
 }
 
@@ -62,21 +73,30 @@ a:active {
 }
 
 .article {
-    h1 {
-        font-size: 35px;
+    h1, h2, h3, h4, h5, h6 {
+        // font-size: 35px;
         font-family: "Josefin Slab";
         text-shadow: 0 0 25px grey, 0 0 5px grey;
+        margin-left: 10px;
     }
     p {
+    //     margin-left: 10px;
+    //     margin-right: 10px;
         font-family: "Tahoma";
-        font-size: 15px;
-        text-align: justify;
+        font-size: 16px;
+    //     text-align: justify;
+    //     line-height: 1.6;
+    }
+    blockquote {
+        border-left: 0px;
     }
 }
 
 .wrap-all {
+    background-color: white;
     margin: 0 auto;
     max-width: 950px;
+    border-radius: 20px;
 }
 
 .footer-column {
@@ -99,7 +119,6 @@ a:active {
 
 .sidebar {
     width: 200px;
-    display: inline;
     float: left;
     padding-left: 10px;
     margin-bottom: 30px;
@@ -118,7 +137,7 @@ a:active {
 }
 
 .author-byline {
-    margin-top: 4em;
+    // margin-top: 4em;
     max-width: 100%;
     text-align: center;
     padding: 0.2em;

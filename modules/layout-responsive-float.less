@@ -55,15 +55,15 @@
 // Swap places using pull and push
 .column-a {
     .column(6);
-    order: 2;
+    .push(3)
 }
 .column-b {
     .column(3);
-    order: 3;
+    .pull-right(9);
 }
 .column-c {
     .column(3);
-    order: 1;
+    .pull(9);
 }
 
 // Nested columns

@@ -44,10 +44,10 @@
 .row(@columns: @columns) {
     display: block;
 
-    width: @totalWidth * (@gridSystemWidth + @gutterWidth);
-
-    margin-left:  -1 * @totalWidth * @gutterWidth / 2;
-    margin-right: -1 * @totalWidth * @gutterWidth / 2;
+    // width: @totalWidth * (@gridSystemWidth + @gutterWidth);
+    //
+    // // margin-left:  -1 * @totalWidth * @gutterWidth / 2;
+    // margin-right: -1 * @totalWidth * @gutterWidth / 2;
 
     .clearfix();
 }
@@ -59,7 +59,7 @@
  */
 .column(@col, @columns: @columns) {
     display: inline;
-    float: left;
+    // float: left;
 
     width: @totalWidth * (((@columnWidth + @gutterWidth) * @col ) - @gutterWidth);
 

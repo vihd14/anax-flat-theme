@@ -1235,6 +1235,9 @@ body {
   background-color: #f1f1f1;
   margin: 10px;
 }
+.site-header {
+  position: relative;
+}
 img {
   max-width: 100%;
 }
@@ -1248,8 +1251,9 @@ p {
 .navbar2 li a {
   display: inline-block;
   border: 1px solid #C7D5DE;
-  margin: 10px;
-  margin-bottom: 20px;
+  margin: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-decoration: none;
   box-shadow: 0 0 1em grey;
   opacity: 0.8;
@@ -1363,9 +1367,6 @@ a:active {
 .author-byline a:active {
   color: #000;
 }
-.next-previous {
-  margin: 10px;
-}
 .outer-wrap-footer {
   clear: both;
   margin-bottom: 22px;
@@ -1417,6 +1418,9 @@ a:active {
 .footer-column a:active {
   color: #000;
 }
+.next-previous {
+  margin: 10px;
+}
 .next-previous .next,
 .next-previous .previous {
   width: 50%;
@@ -1424,7 +1428,4 @@ a:active {
 .next-previous .next {
   float: right;
   text-align: right;
-}
-.site-header {
-  position: relative;
 }

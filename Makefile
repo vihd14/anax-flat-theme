@@ -36,7 +36,7 @@ VENDORBIN 	= vendor/bin
 NPMBIN		= node_modules/.bin
 
 # LESS and CSS
-LESS 		 	= style.less
+LESS 		 	= base.less style.less light.less color.less dark.less colorful.less typography-theme.less fun.less
 LESS_MODULES	= modules/
 LESS_OPTIONS 	= --strict-imports --include-path=$(LESS_MODULES)
 CSSLINT_OPTIONS = --quiet
@@ -84,9 +84,10 @@ clean-all: clean
 .PHONY: less
 less: prepare-build
 	@$(call HELPTEXT,$@)
-	$(NPMBIN)/lessc $(LESS_OPTIONS) $(LESS) build/css/style.css
-	$(NPMBIN)/lessc --clean-css $(LESS_OPTIONS) $(LESS) build/css/style.min.css
-	cp build/css/style*.css htdocs/css/
+	$(foreach file, $(LESS), $(NPMBIN)/lessc $(LESS_OPTIONS) $(file) build/css/$(basename $(file)).css; )
+	$(foreach file, $(LESS), $(NPMBIN)/lessc --clean-css $(LESS_OPTIONS) $(file) build/css/$(basename $(file)).min.css; )
+
+	cp build/css/*.min.css htdocs/css/
 
 
 
@@ -94,7 +95,7 @@ less: prepare-build
 .PHONY: less-install
 less-install: less
 	@$(call HELPTEXT,$@)
-	if [ -d ../htdocs/css/ ]; then cp build/css/style.min.css ../htdocs/css/style.min.css; fi
+	if [ -d ../htdocs/css/ ]; then cp build/css/*.min.css ../htdocs/css/; fi
 	if [ -d ../htdocs/js/ ]; then rsync -a js/ ../htdocs/js/; fi
 
 
@@ -103,9 +104,10 @@ less-install: less
 .PHONY: less-lint
 less-lint: less
 	@$(call HELPTEXT,$@)
-	$(NPMBIN)/lessc --lint $(LESS_OPTIONS) $(LESS) > build/lint/style.less
-	- $(NPMBIN)/csslint $(CSSLINT_OPTIONS) build/css/style.css > build/lint/style.css
-	ls -l build/lint/
+	$(foreach file, $(LESS), $(NPMBIN)/lessc --lint $(LESS_OPTIONS) $(file) > build/lint/$(file); )
+		- $(foreach file, $(LESS), $(NPMBIN)/csslint $(CSSLINT_OPTIONS) build/css/$(basename $(file)).css > build/lint/$(basename $(file)).css; )
+
+		ls -l build/lint/
 
 
 

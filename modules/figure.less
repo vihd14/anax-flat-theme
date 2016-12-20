@@ -1,0 +1,147 @@
+/** --------------------------------------------------------------
+ * Figure through .figure
+ */
+@magicNumber: 24px;
+
+.figure {
+    display: table;
+    padding: 0;
+    margin: 10px;
+    //margin-bottom: @magicNumber - 4px;
+    // border: 2px solid #7F6300;
+
+    a {
+
+    }
+
+    img {
+        max-width: 100%; // Make images responsive
+        display: block;
+    }
+
+    figcaption {
+        display: table-caption;
+        caption-side: bottom;
+        // padding-top: @magicNumber / 2;
+
+        p {
+            margin-top: 0;
+            font-size: 14px;
+        }
+    }
+
+    /* Chrome shinks images in td */
+    td img {
+        max-width: none;
+    }
+
+    /* Position the images */
+    &.left {
+        float: left;
+        margin-right: 10px;
+
+        figcaption {
+            text-align: left;
+            margin-left: 0px;
+            margin-right: @magicNumber;
+        }
+    }
+
+    &.right {
+        float: right;
+        margin-left: 10px;
+
+        figcaption {
+            text-align: right;
+            margin-right: 0px;
+            margin-left: @magicNumber;
+        }
+    }
+
+    &.center {
+        clear: both;
+        margin: auto;
+
+        figcaption {
+            text-align: center;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    &.border {
+        border: solid 2px #3e577f;
+    }
+
+    &.shadow {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    &.greyscale {
+        filter: grayscale(100%);
+    }
+
+    &.hue {
+        filter: hue-rotate(90deg);
+    }
+
+    &.saturate {
+        filter: saturate(800%);
+    }
+
+    &.in-a-row {
+        display: inline-table;
+    }
+
+    &.flip {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
+
+    @media screen {
+        @media (max-width: 900px) {
+            &.w50 {
+                width: 450px;
+            }
+
+            &.w25 {
+                width: 225px;
+            }
+        }
+
+        @media (max-width: 850px) {
+            &.w50 {
+                width: 425px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            &.w50 {
+                width: 350px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            &.w50 {
+                width: 325px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            &.w50 {
+                min-width: 100%;
+            }
+
+            &.left,
+            &.right {
+                float: none;
+                margin-left: 0;
+                margin: right: 0;
+            }
+        }
+    }
+}

@@ -3,44 +3,57 @@
  */
 @import "grid-float.less";
 
-.route-grid .inner-wrap {
+.inner-wrap {
     .container();
-    max-width: 950px;
+    @gridWidth: 950px;
     margin-top: 5px;
+    @gridImage:
+    "../img/grid/grid940x12x60x20-nomargin.png";
+    html.vgrid & {
+        .showGrid(@gridWidth, @gridImage);
+    }
 
-    .showGrid(950px);
 }
 
 .row {
     .row(950px);
 }
 
-.route-grid.sidebar {
+.sidebar {
     .column(3);
     float: left;
 }
 
-.route-grid.main {
+.main {
     display: inline-block;
     .column(9);
 }
 
-.route-grid.footer-column {
-    .column(4);
+.footer-column-wrapper {
+    .column(12);
 }
 
-.route-grid.site-footer {
+.footer-column {
+    .column(4);
+    position: relative;
+    float: left;
+    margin-bottom: 1em;
+}
+
+.site-footer {
     .column(12);
 }
 
 .typographyGrid(@maxWidth: 950px) {
     background: url(../img/grid/horisontal-grid-24.png) repeat center center;
-    // background-size: 100% auto;
     margin-left: auto;
     margin-right: auto;
     max-width: @maxWidth;
 }
 
-.route-typography .article {
-    .typographyGrid(950px)
+.article {
+    html.hgrid & {
+        .typographyGrid(950px);
+    }
+    padding-top: 10px;
 }

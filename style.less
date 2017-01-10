@@ -3,29 +3,58 @@
 */
 @import url(base.less);
 
-@import url('https://fonts.googleapis.com/css?family=Cinzel');
+@import url('https://fonts.googleapis.com/css?family=Assistant:200');
+@import url('https://fonts.googleapis.com/css?family=Reem+Kufi');
+
+/* Navbar */
+
+.rm-default.rm-desktop .selected,
+.rm-default.rm-desktop .selected-parent,
+.rm-default.rm-desktop .selected.selected-parent {
+    border-bottom: solid 2px #aa1d1f;
+}
+
+.rm-default.rm-mobile .selected,
+.rm-default.rm-mobile .selected-parent,
+.rm-default.rm-mobile .selected.selected-parent,
+.rm-default.rm-mobile.rm-clicked .selected,
+.rm-default.rm-mobile.rm-clicked .selected-parent,
+.rm-default.rm-mobile.rm-clicked .selected.selected-parent {
+    background-color: #333;
+}
 
 //Personal theme (default)
 body {
-    background-color: #f1f1f1;
+    background-color: #666666;
+    background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+    background-attachment: fixed;
+}
+
+.outer-wrap-header {
+    margin-bottom: 20px;
+    border-bottom: dotted 2px #aa1d1f;
 }
 
 .blog-list {
     h1, h2, h3, h4, h5, h6 {
-        font-family: "Cinzel";
+        font-family: "Assistant";
+    }
+}
+
+.blog-post {
+    header, footer {
+        p {
+            font-size: 12px;
+            font-style: italic;
+        }
     }
 }
 
 .sidebar-right {
-    h3 {
-        font-family: "Cinzel";
-    }
-}
-
-.sidebar-left {
-    h4 {
+    border-left: dotted 2px #aa1d1f;
+    h2, h3 {
         text-align: center;
-        font-family: "Calibri";
+        font-family: "Assistant";
     }
 }
 
@@ -34,35 +63,24 @@ body {
 }
 
 .navbar2 {
-    float: left;
-    padding-left: 8px;
+    .rm-default a {
+        padding-bottom: 0px;
+    }
     li {
         a {
+            font-family: "Reem Kufi";
             display: inline-block;
-            border: 1px solid #C7D5DE;
             margin: 2px;
             margin-top: 10px;
-            margin-bottom: 10px;
-            font-size: 14px;
-            text-decoration: none;
-            box-shadow: 0 0 1em grey;
-            opacity: 0.6;
+            font-size: 22px;
         }
         a:visited {
-            color: black;
+            color: #EE292F;
             text-decoration: none;
         }
         a:hover {
-            background-color: #dbdbdb;
-            text-decoration: none;
-            opacity: 1;
-            color: black;
-        }
-        .selected {
-            background-color: #dbdbdb;
-            text-decoration: none;
-            opacity: 1;
-            color: black;
+            color: #aa1d1f;
+            text-decoration: underline;
         }
     }
 }
@@ -76,17 +94,17 @@ a {
 }
 
 a.link {
-    color: #62607A;
+    color: #EE292F;
     text-decoration: none;
 }
 
 a:visited {
-    color: #00C200;
+    color: #EE292F;
     text-decoration: none;
 }
 
 a:hover {
-    color: #99E799;
+    color: #aa1d1f;
     text-decoration: none;
 }
 
@@ -107,65 +125,42 @@ a:active {
         font-style: italic;
     }
 
-    h1, h2 {
-        text-shadow: 0 0 25px grey, 0 0 5px grey;
-    }
     h1, h2, h3, h4, h5, h6 {
         color: black;
-        font-family: "Cinzel";
+        font-family: "Assistant";
     }
-}
-
-.footer-column-wrapper {
-    background-color: #DDE6EB;
-    box-shadow: 0 0 25px #B7B6CD, 0 0 5px grey;
 }
 
 .sidebar {
     ul {
-        font-family: "Calibri";
+        font-family: "Arial";
         list-style-type: circle;
     }
 }
 
-.author-byline {
-    border-bottom: 1px solid #f1f1f1;
-    border-top: 1px solid #f1f1f1;
-    color: grey;
-
-    a.link {
-        color: #62607A;
-    }
-
-    a:visited {
-        color: #969696;
-    }
-
-    a:hover {
-        color: #B7B6CD;
-        text-decoration: none;
-    }
-
-    a:active {
-        color: #000;
-    }
+.footer-column-wrapper {
+    border-bottom: solid 1px #f1f1f1;
 }
 
 .footer-column {
+    color: #f1f1f1;
     h4 {
-        font-family: "Cinzel";
+        font-family: "Assistant";
     }
     p {
-        font-family: "Calibri";
+        font-family: "Arial";
     }
-    ul {
-        text-align: center;
-        list-style-type: none;
-    }
-    a {
-        font-family: "Calibri";
-        font-size: 14px;
-    }
+}
+
+.outer-wrap-footer {
+    background-color: #751111;
+}
+
+.inner-wrap-footer {
+    background-color: #751111;
+}
+
+.site-footer {
     a.link {
         color: #6e8693;
     }

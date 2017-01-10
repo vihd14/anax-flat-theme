@@ -6,24 +6,46 @@ html {
 }
 
 body {
-    margin: 10px;
+    margin-top: 10px;
+}
+
+.row {
+    margin-left: 0;
+}
+
+.logo-header {
+    max-width: 70px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .flash-wrap {
     max-width: 950px;
-    max-height: 248px;
-}
-
-.logo-left {
-    display: none;
-}
-
-.logo-right {
-    display: none;
+    max-height: 358px;
 }
 
 .site-header {
     position: relative;
+}
+
+.breadcrumb-list {
+    ul {
+        margin: 0;
+    }
+    li {
+        list-style: circle;
+        float: left;
+    }
+    li a {
+        display: block;
+        text-decoration: none;
+        font-size: 12px;
+        font-style: italic;
+        margin-right: 25px;
+        padding: -10px;
+    }
 }
 
 .article code {
@@ -49,11 +71,11 @@ hr {
         margin-left: @magicnumber;
         margin-right: @magicnumber;
         font-size: 16px;
-        font-family: "Calibri";
+        font-family: "Arial";
     }
     time {
         margin-left: @magicnumber;
-        font-family: "Calibri";
+        font-family: "Arial";
     }
 }
 
@@ -65,11 +87,6 @@ form {
     max-width: 100%;
 }
 
-table {
-    max-width: 100%;
-    max-height: 100%;
-}
-
 img {
     max-width: 100%;
 }
@@ -77,6 +94,9 @@ img {
 @magicnumber: 24px;
 
 .navbar2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
 
@@ -85,6 +105,7 @@ img {
         margin: @magicnumber;
     }
     p {
+        font-family: "Arial";
         margin: @magicnumber;
         font-size: 16px;
     }
@@ -92,6 +113,14 @@ img {
         margin: @magicnumber;
         border-left: 0px;
     }
+    ul {
+        font-family: "Arial";
+        margin: @magicnumber;
+    }
+}
+
+.article.blog {
+    padding-top: 0px;
 }
 
 .wrap-all {
@@ -101,16 +130,22 @@ img {
 }
 
 .footer-column-wrapper {
-    display: block;
-    max-width: 80%;
-    margin-top: 1em;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
     overflow: auto;
 }
 
+fieldset {
+    margin: @magicnumber;
+}
+
+legend {
+    font-family: "Arial";
+}
+
 .sidebar {
-    width: 200px;
+    width: 25%;
     float: left;
     margin-bottom: 30px;
 }
@@ -119,7 +154,6 @@ img {
     display: inline-block;
     box-sizing: border-box;
     width: 70%;
-    border-right: 1px solid #999;
     margin-top: 15px;
 }
 
@@ -127,72 +161,54 @@ img {
     display: inline;
     float: right;
     box-sizing: border-box;
+    margin: 10px;
+    padding-left: 10px;
+    margin-right: 15px;
 
     p, ul {
-        font-family: "Calibri";
+        font-family: "Arial";
         font-size: 16px;
     }
 }
 
-.main.has-sidebar-left {
-    font-family: "Calibri";
-    display: inline-block;
-    box-sizing: border-box;
-    width: 70%;
-    margin-left: 10px;
-    margin-top: 15px;
-}
-
-
-.author-byline {
-    max-width: 100%;
-    text-align: center;
-    padding: 0.2em;
-    p {
-        font-size: 12px;
-    }
-}
-
 .outer-wrap-footer {
+    margin-top: 20px;
     clear: both;
-    margin-bottom: 22px;
+}
+
+.inner-wrap-footer {
+    max-width: 950px;
+    text-align: center;
+}
+
+.footer-column {
+    h4 {
+        font-size: 20px;
+    }
+    p {
+        font-family: "Arial";
+        font-size: 14px;
+    }
+    a {
+        font-size: 14px;
+    }
 }
 
 .site-footer {
     text-align: center;
-    margin-bottom: 1em;
+    font-family: "Arial";
     p {
-        font-family: "Calibri";
         font-size: 13px;
     }
     ul {
-        font-family: "Calibri";
         margin: 0;
         padding: 0;
         list-type: none;
     }
 
     li {
+        margin: 10px;
         display: inline;
-    }
-}
-
-.footer-column {
-    position: relative;
-    float: left;
-    margin: 0.5em;
-    max-width: 35%;
-    h4 {
-        text-align: center;
-        font-size: 20px;
-    }
-    p {
-        font-family: "Calibri";
-        text-align: center;
-        font-size: 14px;
-    }
-    a {
-        font-size: 14px;
     }
 }
 
@@ -204,7 +220,7 @@ img {
     }
 
     a {
-        font-family: "Calibri";
+        font-family: "Arial";
         font-size: 16px;
     }
 

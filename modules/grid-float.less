@@ -12,8 +12,8 @@
 // Use % for fluid layout
 @totalWidth: 100% / @gridSystemWidth;
 
-.showGrid(@maxWidth: 950px) {
-    background: url(../img/grid/grid940x12x60x20-nomargin.png) repeat-y fixed center center;
+.showGrid(@maxWidth: 950px, @gridImage) {
+    background: url("@{gridImage}") repeat-y fixed center center;
     background-size: 100% auto;
     margin-left: auto;
     margin-right: auto;
